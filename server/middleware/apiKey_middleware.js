@@ -13,13 +13,15 @@ module.exports = (req, res, next ) => {
     const {apikey} = req.headers
 
     if(!req.headers.apikey){
-      
+      res.end(() => console.log('include a unique apikey'))
     }else if(apikey && uniqueExp.find( e => e[0] == apikey) == undefined){
       let newArray = deepclone(gods)
       uniqueExp.push({apikey,newArray})
       let index = uniqueExp.find(e => e.apikey == apikey)
+      req.session.user.apikey = index
     }else{
-      let found = uniqueExp.find((e) => e[0] == apikey)
+      let index = uniqueExp.find((e) => e[0] == apikey)
+      req.session.user.apikey = index
     }
     next()
 }
