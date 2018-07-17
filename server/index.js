@@ -2,12 +2,22 @@ require ('dotenv').config()
 const EXPRESS = require('express')
 const BODYPARSER = require('body-parser')
 const MASSIVE = require('massive')
+const SESSION = require('express-session')
 const C = require('./Controller/api_controller')
 const MIDDLEWARE = require('./middleware/apiKey_middleware')
 
 const APP = EXPRESS()
 APP.use(BODYPARSER.json())
 APP.use(MIDDLEWARE)
+
+APP.use(SESSION({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 60 * 60 * 24 * 14 * 1000
+  }
+}))
 
 MASSIVE(process.env.CONNECTION_STRING)
   .then( db => {

@@ -296,11 +296,6 @@ module.exports = {
       mythology: mythology || gods[index].mythology,
       demigod: !demigod ? false : true || gods[index].demigod
     }
-    // req.app.get('db').update_god([id, updateGod.name, updateGod.mythology, updateGod.demigod])
-    //   .then( response => {
-    //     console.log('response', response)
-    //   })
-    // .catch( err => console.log(err))
     gods[index] = updateGod
     console.log(gods[index])
     console.log('new demigod status', gods[index].demigod)
