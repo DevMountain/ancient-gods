@@ -4,11 +4,12 @@ const BODYPARSER = require('body-parser')
 const MASSIVE = require('massive')
 const SESSION = require('express-session')
 const C = require('./Controller/api_controller')
+const CHECKFORSESSION = require('./middleware/checkForSession')
 const MIDDLEWARE = require('./middleware/apiKey_middleware')
 
 const APP = EXPRESS()
 APP.use(BODYPARSER.json())
-APP.use(MIDDLEWARE)
+
 
 APP.use(SESSION({
   secret: process.env.SESSION_SECRET,
@@ -18,6 +19,9 @@ APP.use(SESSION({
     maxAge: 60 * 60 * 24 * 14 * 1000
   }
 }))
+
+APP.use(CHECKFORSESSION)
+APP.use(MIDDLEWARE)
 
 MASSIVE(process.env.CONNECTION_STRING)
   .then( db => {

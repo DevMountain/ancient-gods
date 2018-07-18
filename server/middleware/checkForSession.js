@@ -1,9 +1,11 @@
 module.exports = (req, res, next) => {
+  const {apikey} = req.headers
+  console.log('sessions', req.session)
   const { session } = req
-  !session.user 
-    ? session.user = {
-      apikey
+    if(!session.user){
+      session.user = {
+        apikey: apikey
+      }
     }
-    : session.user
     next()
 }
