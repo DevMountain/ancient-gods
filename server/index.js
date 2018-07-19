@@ -23,10 +23,10 @@ APP.use(SESSION({
 APP.use(CHECKFORSESSION)
 APP.use(MIDDLEWARE)
 
-MASSIVE(process.env.CONNECTION_STRING)
-.then( db => {
-  APP.set('db', db)
-}).catch(err=> console.log(err))
+// MASSIVE(process.env.CONNECTION_STRING)
+// .then( db => {
+//   APP.set('db', db)
+// }).catch(err=> console.log(err))
 
 
 

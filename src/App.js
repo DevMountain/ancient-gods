@@ -42,6 +42,7 @@ class App extends Component {
     // console.log(allUsers);
     // console.log(this.state.username)
     // console.log(this.state.users)
+    console.log('test')
     return (
       <div className="App">
       <div className="username">
