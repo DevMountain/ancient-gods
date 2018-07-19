@@ -10,19 +10,23 @@ module.exports = (req, res, next ) => {
     // console.log(req.path)
     // console.log('unique', uniqueExp);
     // console.log('gods array', gods)
-    console.log('session', req.session)
-    console.log('req.headers', req.headers)
+    // console.log('session', req.session)
+    // console.log('req.headers', req.headers)
     const {apikey} = req.headers
-
+    // console.log('apikey--------', apikey)
     if(!req.headers.apikey){
+      req.session.user.apikey = false
     }else if(apikey && uniqueExp.find( e => e[0] == apikey) == undefined){
+      // console.log('----notfound', uniqueExp.find( e => e[0] == apikey) == undefined)
       let newArray = deepclone(gods)
-      uniqueExp.push({apikey,newArray})
+      uniqueExp.push({apikey: apikey, gods: newArray})
       let index = uniqueExp.find(e => e.apikey == apikey)
-      req.session.user.apikey = index
+      // console.log('index----------------', index.apikey);
+      req.session.user.apikey = index.apikey
     }else{
       let index = uniqueExp.find((e) => e[0] == apikey)
-      req.session.user.apikey = index
+      // console.log('-----found', uniqueExp.find((e) => e[0] == apikey))
+      req.session.user.apikey = index.apikey
     }
     next()
 }

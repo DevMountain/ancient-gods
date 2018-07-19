@@ -24,13 +24,14 @@ APP.use(CHECKFORSESSION)
 APP.use(MIDDLEWARE)
 
 MASSIVE(process.env.CONNECTION_STRING)
-  .then( db => {
-    APP.set('db', db)
-  }).catch(err=> console.log(err))
+.then( db => {
+  APP.set('db', db)
+}).catch(err=> console.log(err))
 
 
 
 APP.get('/api/gods/get', C.get)
+
 APP.get('/api/god/:id', C.getOne)
 APP.post('/api/god/create', C.create)
 APP.put('/api/god/update/:id', C.update)

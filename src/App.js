@@ -5,10 +5,7 @@ class App extends Component {
   constructor(){
     super()
       this.state = {
-        users: [{
-          name: '',
-          apikey: ''
-        }],
+        users: [],
         username: '',
         apikey: ''
       }

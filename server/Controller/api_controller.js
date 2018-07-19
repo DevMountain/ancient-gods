@@ -284,20 +284,28 @@ const gods = [
   }
 ]
 
-const uniqueExp = ["test", "test", "test", "test1"]
+const uniqueExp = []
 
 
 module.exports = {
   gods,uniqueExp,
   get: (req,res) => {
-    console.log('req.session',req.session)
-    res.status(200).send(gods)
+    // console.log('hello')
+    console.log('req.session-------------',req.session.user)
+    console.log('uniqueExp------asdf--', uniqueExp.apikey);
+    const { apikey } = req.session.user
+    let index = uniqueExp.findIndex( e => e.apikey == apikey )
+    console.log(index);
+    req.session.user.apikey ? 
+    res.status(200).send(uniqueExp[index]) : res.send(gods)
   },
 
   getOne: (req,res) => {
     const { id } = req.params
-    let godIndex = gods.findIndex( e => e.id === id )
-    res.status(200).send(gods[godIndex])
+    const { apikey } = req.session.user
+    let index = uniqueExp.findIndex( e => e.apikey == apikey)
+    let godIndex = uniqueExp[index].gods.filter( e => e.id == id )
+    res.status(200).send(godIndex)
   },
 
   create: (req, res) => {
@@ -309,15 +317,18 @@ module.exports = {
       mythology: mythology,
       demigod: demigod
     }
-    gods.push(newGod)
-    res.status(201).send(gods)
+    const { apikey } = req.session.user
+    let index = uniqueExp.findIndex( e => e.apikey == apikey)
+    console.log(uniqueExp[index]);
+    uniqueExp[index].gods.push(newGod)
+    res.status(201).send(uniqueExp[index].gods)
   },
 
   update: (req, res) => {
     const { id } = req.params
     const { name, powers, mythology, demigod } = req.body
     let index = gods.findIndex( e => e.id == id )
-    console.log('is', gods[index].demigod,'should change to', demigod)
+    // console.log('is', gods[index].demigod,'should change to', demigod)
     let updateGod = {
       id: id,
       name: name || gods[index].name,
@@ -327,7 +338,7 @@ module.exports = {
     }
     gods[index] = updateGod
     console.log(gods[index])
-    console.log('new demigod status', gods[index].demigod)
+    // console.log('new demigod status', gods[index].demigod)
     res.status(200).json(gods)
   },
 
