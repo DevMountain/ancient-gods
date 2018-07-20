@@ -290,14 +290,16 @@ const uniqueExp = []
 module.exports = {
   gods,uniqueExp,
   get: (req,res) => {
+    // console.log(uniqueExp);
     // console.log('hello')
     console.log('req.session-------------',req.session.user)
-    console.log('uniqueExp------asdf--', uniqueExp.apikey);
+    // console.log('uniqueExp------asdf--', uniqueExp.apikey);
     const { apikey } = req.session.user
-    let index = uniqueExp.findIndex( e => e.apikey == apikey )
-    console.log(index);
+    let index = uniqueExp.findIndex( e => e.apikey == apikey)
+    // console.log(index);
+    console.log('uniqueExp----------------', uniqueExp[index].gods)
     req.session.user.apikey ? 
-    res.status(200).send(uniqueExp[index]) : res.send(gods)
+    res.status(200).send(uniqueExp[index].gods) : res.send(gods)
   },
 
   getOne: (req,res) => {
@@ -305,7 +307,8 @@ module.exports = {
     const { apikey } = req.session.user
     let index = uniqueExp.findIndex( e => e.apikey == apikey)
     let godIndex = uniqueExp[index].gods.filter( e => e.id == id )
-    res.status(200).send(godIndex)
+    apikey ? 
+    res.status(200).send(godIndex) : res.send('please include unique apikey')
   },
 
   create: (req, res) => {
@@ -319,7 +322,7 @@ module.exports = {
     }
     const { apikey } = req.session.user
     let index = uniqueExp.findIndex( e => e.apikey == apikey)
-    console.log(uniqueExp[index]);
+    // console.log(uniqueExp[index]);
     uniqueExp[index].gods.push(newGod)
     res.status(201).send(uniqueExp[index].gods)
   },
@@ -327,19 +330,32 @@ module.exports = {
   update: (req, res) => {
     const { id } = req.params
     const { name, powers, mythology, demigod } = req.body
-    let index = gods.findIndex( e => e.id == id )
-    // console.log('is', gods[index].demigod,'should change to', demigod)
+    const { apikey }  = req.session.user
+    
+    let api = uniqueExp.find( e => e.apikey == apikey)
+    // console.log('api',api)
+    // console.log('api.gods----------------------------------', api.gods)
+    let index = api.gods.findIndex(e => e.id == id)
+    // console.log('name', uniqueExp[index].gods[id].name, 'powers', uniqueExp[index].gods[id].powers, 'mythology', uniqueExp[index].gods[id].mythology, 'demigod', uniqueExp[index].gods[id].demigod)
+    
     let updateGod = {
       id: id,
-      name: name || gods[index].name,
-      powers: powers || gods[index].powers,
-      mythology: mythology || gods[index].mythology,
-      demigod: !demigod ? false : true || gods[index].demigod
+      name: name || uniqueExp[index].gods[id].name,
+      powers: powers || uniqueExp[index].gods[id].powers,
+      mythology: mythology || uniqueExp[index].gods[id].mythology,
+      demigod: !demigod ? false : true || uniqueExp[index].gods[id].demigod
     }
-    gods[index] = updateGod
-    console.log(gods[index])
+    
+    uniqueExp[index].gods[id] = updateGod
+    // console.log('updated God', updateGod)
+    // console.log('index------------------------------------------', index)
+    // console.log('uniqueExp[index].gods        ', uniqueExp[index].gods)
+    // console.log('api gods', api.gods.find( e => e.id == id))
+    // console.log('index', uniqueExp.find( e => e.apikey == apikey).gods
+    console.log('testing', uniqueExp[index].gods[id])
+    console.log('updated God', uniqueExp[index].gods)
     // console.log('new demigod status', gods[index].demigod)
-    res.status(200).json(gods)
+    res.status(200).json(uniqueExp[index].gods)
   },
 
   delete: (req,res) => {

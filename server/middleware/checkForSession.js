@@ -5,7 +5,10 @@ module.exports = (req, res, next) => {
     if(!session.user){
       session.user ={ 
        apikey: apikey
-    }}
+      }
+      }else if(session.user.apikey !== apikey){
+        session.user.apikey == apikey
+     }
     // console.log('session.user.apikey------', session.user.apikey)
     next()
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { router } from 'sw-toolbox';
 
 class App extends Component {
   constructor(){
@@ -14,7 +15,7 @@ class App extends Component {
     this.getGods = this.getGods.bind(this)
   }
 
-  
+
   addUser(){
     this.setState({
       users: [...this.state.users, {name: this.state.username, apikey: this.state.apikey }]
