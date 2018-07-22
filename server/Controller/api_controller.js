@@ -1,9 +1,9 @@
-let id = 35
+let id = 36
 
 
 const gods = [
   {
-    id: 0,
+    id: 1,
     name: "Zeus",
     powers: ["Lightning Bolts", "Thunder", "Weather"],
     mythology: "Greek",
@@ -11,7 +11,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 1,
+    id: 2,
     name: "Hera",
     powers: ["Bless and Curse Marriages"],
     mythology: "Greek",
@@ -19,7 +19,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 2,
+    id: 3,
     name: "Achilles",
     powers: ["Invincibility", "War"],
     mythology: "Greek",
@@ -27,7 +27,7 @@ const gods = [
     demigod: true
   },
   {
-    id: 3,
+    id: 4,
     name: "Poseidon",
     powers: ["Water", "Storms", "Lightning"],
     mythology: "Greek",
@@ -35,7 +35,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 4,
+    id: 5,
     name: "Demeter",
     powers: ["Agriculture", "Fertility of Earth"],
     mythology: "Greek",
@@ -43,7 +43,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 5,
+    id: 6,
     name: "Ares",
     powers: ["Strength", "Physicality", "Battle"],
     mythology: "Greek",
@@ -51,7 +51,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 6,
+    id: 7,
     name: "Athena",
     powers: ["Defense", "Wisdom"],
     mythology: "Greek",
@@ -59,7 +59,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 7,
+    id: 8,
     name: "Apollo",
     powers: ["Prophecy", "Healing", "Light"],
     mythology: "Greek",
@@ -67,7 +67,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 8,
+    id: 9,
     name: "Artemis",
     powers: ["Plagues", "Healing", "Protector of Children"],
     mythology: "Greek",
@@ -75,7 +75,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 9,
+    id: 10,
     name: "Hephaestus",
     powers: ["Blacksmithing"],
     mythology: "Greek",
@@ -83,7 +83,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 10,
+    id: 11,
     name: "Aphrodite",
     powers: ["Transformation", "Love"],
     mythology: "Greek",
@@ -91,7 +91,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 11,
+    id: 12,
     name: "Hermes",
     powers: ["Speed", "Flight"],
     mythology: "Greek",
@@ -99,7 +99,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 12,
+    id: 13,
     name: "Dionysus",
     powers: ["Grape Harvest", "Wine making"],
     mythology: "Greek",
@@ -107,7 +107,7 @@ const gods = [
     demigod: true
   },
   {
-    id: 13,
+    id: 14,
     name: "Hades",
     powers: ["Power Over the Dead","Riches"],
     mythology: "Greek",
@@ -115,7 +115,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 14,
+    id: 15,
     name: "Hypnos",
     powers: ["Sleep"],
     mythology: "Greek",
@@ -123,7 +123,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 15,
+    id: 16,
     name: "Nike",
     powers: ["Victory", "Flight"],
     mythology: "Greek",
@@ -131,7 +131,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 16,
+    id: 17,
     name: "Janus",
     powers: ["Time"],
     mythology: "Greek",
@@ -139,7 +139,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 17,
+    id: 18,
     name: "Anaeas",
     powers: ["Strength", "Stamina"],
     mythology: "Greek",
@@ -147,7 +147,7 @@ const gods = [
     demigod: true
   },
   {
-    id: 18,
+    id: 19,
     name: "Nemesis",
     powers: ["Balance", "Justice", "Retribution"],
     mythology: "Greek",
@@ -155,7 +155,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 19,
+    id: 20,
     name: "Iris",
     powers: ["Messenger", "Flight"],
     mythology: "Greek",
@@ -163,7 +163,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 20,
+    id: 21,
     name: "Hecate",
     powers: ["Magic", "Ghosts", "Necromancy"],
     mythology: "Greek",
@@ -171,7 +171,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 21,
+    id: 22,
     name: "Tyche",
     powers: ["Fortune"],
     mythology: "Greek",
@@ -179,7 +179,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 22,
+    id: 23,
     name: "Jupiter",
     powers: ["Light and Sky", "Thunder", "Lightning"],
     mythology: "Roman",
@@ -187,7 +187,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 23,
+    id: 24,
     name: "Juno",
     powers: ["Leadership", "Queen of The Gods"],
     mythology: "Roman",
@@ -195,7 +195,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 24,
+    id: 25,
     name: "Neptune",
     powers: ["Water", "Storms", "Earthquakes"],
     mythology: "Roman",
@@ -203,7 +203,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 25,
+    id: 26,
     name: "Hercules",
     powers: ["Strength"],
     mythology: "Roman",
@@ -211,7 +211,7 @@ const gods = [
     demigod: true
   },
   {
-    id: 26,
+    id: 27,
     name: "Minerva",
     powers: ["Wisdom", "War", "Art", "Commerce"],
     mythology: "Roman",
@@ -219,7 +219,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 27,
+    id: 28,
     name: "Mars",
     powers: ["War", "Agriculture"],
     mythology: "Roman",
@@ -227,7 +227,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 28,
+    id: 29,
     name: "Venus",
     powers: ["Love", "Beauty", "Fertility", "Victory"],
     mythology: "Roman",
@@ -235,7 +235,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 29,
+    id: 30,
     name: "Diana",
     powers: ["Goddess of the Hunt", "Moon", "Birthing", "Speak to Animals"],
     mythology: "Roman",
@@ -243,7 +243,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 30,
+    id: 31,
     name: "Vulcan",
     powers: ["Fire", "Armor", "Blacksmithing"],
     mythology: "Roman",
@@ -251,7 +251,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 31,
+    id: 32,
     name: "Mercury",
     powers: ["Transportation", "Mercantile", "Messenger"],
     mythology: "Roman",
@@ -259,7 +259,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 32,
+    id: 33,
     name: "Ceres",
     powers: ["Agriculture", "Maternal Love"],
     mythology: "Roman",
@@ -267,7 +267,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 33,
+    id: 34,
     name: "Vesta",
     powers: ["Family", "Home"],
     mythology: "Roman",
@@ -275,7 +275,7 @@ const gods = [
     demigod: false
   },
   {
-    id: 34,
+    id: 35,
     name: "Bacchus",
     powers: ["Agriculture", "Wine", "Fertility"],
     mythology: "Roman",
@@ -284,35 +284,30 @@ const gods = [
   }
 ]
 
-const uniqueExp = []
+const uniqueExp = {}
 
 
 module.exports = {
   gods,uniqueExp,
   get: (req,res) => {
-    // console.log(uniqueExp);
-    // console.log('hello')
-    console.log('req.session-------------',req.session.user)
-    // console.log('uniqueExp------asdf--', uniqueExp.apikey);
-    const { apikey } = req.session.user
-    let index = uniqueExp.findIndex( e => e.apikey == apikey)
-    // console.log(index);
-    console.log('uniqueExp----------------', uniqueExp[index].gods)
-    req.session.user.apikey ? 
-    res.status(200).send(uniqueExp[index].gods) : res.send(gods)
+    const {apikey} = req.headers
+    console.log(apikey)
+    console.log(req.headers)
+    apikey 
+    ? res.status(200).send(uniqueExp.apikey)
+    : res.send('Please include an API key')
   },
 
   getOne: (req,res) => {
     const { id } = req.params
-    const { apikey } = req.session.user
-    let index = uniqueExp.findIndex( e => e.apikey == apikey)
-    let godIndex = uniqueExp[index].gods.filter( e => e.id == id )
+    const {apikey} = req.headers
     apikey ? 
-    res.status(200).send(godIndex) : res.send('please include unique apikey')
+    res.status(200).send(uniqueExp.apikey.id) : res.send('Please include an API key')
   },
 
   create: (req, res) => {
     const {name, powers, mythology, demigod} = req.body
+    const { apikey } = req.headers
     let newGod = {
       id: id++,
       name: name,
@@ -320,49 +315,40 @@ module.exports = {
       mythology: mythology,
       demigod: demigod
     }
-    const { apikey } = req.session.user
-    let index = uniqueExp.findIndex( e => e.apikey == apikey)
-    // console.log(uniqueExp[index]);
-    uniqueExp[index].gods.push(newGod)
-    res.status(201).send(uniqueExp[index].gods)
+    uniqueExp.apikey.push(newGod)
+    res.status(201).send(uniqueExp.apikey)
   },
 
   update: (req, res) => {
     const { id } = req.params
-    const { name, powers, mythology, demigod } = req.body
-    const { apikey }  = req.session.user
-    
-    let api = uniqueExp.find( e => e.apikey == apikey)
-    // console.log('api',api)
-    // console.log('api.gods----------------------------------', api.gods)
-    let index = api.gods.findIndex(e => e.id == id)
-    // console.log('name', uniqueExp[index].gods[id].name, 'powers', uniqueExp[index].gods[id].powers, 'mythology', uniqueExp[index].gods[id].mythology, 'demigod', uniqueExp[index].gods[id].demigod)
-    
+    const { name, powers, mythology, demigod} = req.body
+    const { apikey } = req.headers
+    let index = uniqueExp.apikey.find( e => e.id == id)
     let updateGod = {
       id: id,
-      name: name || uniqueExp[index].gods[id].name,
-      powers: powers || uniqueExp[index].gods[id].powers,
-      mythology: mythology || uniqueExp[index].gods[id].mythology,
-      demigod: !demigod ? false : true || uniqueExp[index].gods[id].demigod
+      name: name || index.name,
+      powers: powers || index.powers,
+      mythology: mythology || index.mythology,
+      demigod: index.demigod
     }
-    
-    uniqueExp[index].gods[id] = updateGod
-    // console.log('updated God', updateGod)
-    // console.log('index------------------------------------------', index)
-    // console.log('uniqueExp[index].gods        ', uniqueExp[index].gods)
-    // console.log('api gods', api.gods.find( e => e.id == id))
-    // console.log('index', uniqueExp.find( e => e.apikey == apikey).gods
-    console.log('testing', uniqueExp[index].gods[id])
-    console.log('updated God', uniqueExp[index].gods)
-    // console.log('new demigod status', gods[index].demigod)
-    res.status(200).json(uniqueExp[index].gods)
+
+    if(demigod == 'undefined'){
+      return;
+    }else if(demigod){
+      updateGod.demigod = demigod
+    }
+
+    uniqueExp.apikey.index = updateGod
+    console.log('test',uniqueExp.apikey.index)
+    res.status(202).json(updateGod)
   },
 
   delete: (req,res) => {
-    const { id } = req.params
-    let index = gods.findIndex(e => e.id == id)
-    gods.splice(index,1)
-    res.status(200).send(gods)
+    const { id } = req.param
+    const { apikey } = req.headers
+    let index = uniqueExp.apikey.find( e => e.id == id)
+    uniqueExp.apikey.splice(index,1)
+    res.status(200).send(uniqueExp.apikey)
   }
 
 

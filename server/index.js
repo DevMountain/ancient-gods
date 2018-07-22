@@ -1,44 +1,24 @@
 require ('dotenv').config()
-const EXPRESS = require('express')
-const BODYPARSER = require('body-parser')
-const MASSIVE = require('massive')
-const SESSION = require('express-session')
-const C = require('./Controller/api_controller')
-const CHECKFORSESSION = require('./middleware/checkForSession')
-const MIDDLEWARE = require('./middleware/apiKey_middleware')
+const express = require('express')
+const bodyParser = require('body-parser')
+const c = require('./Controller/api_controller')
+const middleware = require('./middleware/apiKey_middleware')
 
-const APP = EXPRESS()
-APP.use(BODYPARSER.json())
+const app = express()
+app.use(bodyParser.json())
 
-
-APP.use(SESSION({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 60 * 60 * 24 * 14 * 1000
-  }
-}))
-
-APP.use(CHECKFORSESSION)
-APP.use(MIDDLEWARE)
-
-// MASSIVE(process.env.CONNECTION_STRING)
-// .then( db => {
-//   APP.set('db', db)
-// }).catch(err=> console.log(err))
+app.use(middleware)
 
 
-
-APP.get('/api/gods', C.get)
-APP.get('/api/god/:id', C.getOne)
-APP.post('/api/god/create', C.create)
-APP.patch('/api/god/update/:id', C.update)
-APP.put('/api/god/update/:id', C.update)
-APP.delete('/api/god/:id', C.delete)
+app.get('/api/gods', c.get)
+app.get('/api/gods/:id', c.getOne)
+app.post('/api/gods', c.create)
+app.patch('/api/gods/:id', c.update)
+app.put('/api/gods/:id', c.update)
+app.delete('/api/gods/:id', c.delete)
 
 
 const PORT = 4000
-APP.listen( PORT, () => {
+app.listen( PORT, () => {
   console.log( 'Speaking to the gods on port ' + PORT)
 })
