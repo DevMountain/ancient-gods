@@ -14,7 +14,6 @@ app.get('/api/gods', c.get)
 app.get('/api/gods/:id', c.getOne)
 app.post('/api/gods', c.create)
 app.patch('/api/gods/:id', c.update)
-app.put('/api/gods/:id', c.update)
 app.delete('/api/gods/:id', c.delete)
 
 

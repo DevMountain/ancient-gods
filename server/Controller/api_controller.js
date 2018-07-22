@@ -291,18 +291,15 @@ module.exports = {
   gods,uniqueExp,
   get: (req,res) => {
     const {apikey} = req.headers
-    console.log(apikey)
-    console.log(req.headers)
-    apikey 
-    ? res.status(200).send(uniqueExp.apikey)
-    : res.send('Please include an API key')
+
+    res.status(200).send(uniqueExp[apikey])
   },
 
   getOne: (req,res) => {
     const { id } = req.params
     const {apikey} = req.headers
-    apikey ? 
-    res.status(200).send(uniqueExp.apikey.id) : res.send('Please include an API key')
+
+    res.status(200).send(uniqueExp[apikey].id) 
   },
 
   create: (req, res) => {
@@ -315,15 +312,16 @@ module.exports = {
       mythology: mythology,
       demigod: demigod
     }
-    uniqueExp.apikey.push(newGod)
-    res.status(201).send(uniqueExp.apikey)
+
+    uniqueExp[apikey].push(newGod)
+    res.status(201).send(uniqueExp[apikey])
   },
 
   update: (req, res) => {
     const { id } = req.params
     const { name, powers, mythology, demigod} = req.body
     const { apikey } = req.headers
-    let index = uniqueExp.apikey.find( e => e.id == id)
+    let index = uniqueExp[apikey].find( e => e.id == id)
     let updateGod = {
       id: id,
       name: name || index.name,
@@ -338,18 +336,16 @@ module.exports = {
       updateGod.demigod = demigod
     }
 
-    uniqueExp.apikey.index = updateGod
-    console.log('test',uniqueExp.apikey.index)
+    uniqueExp[apikey].splice(index,1,updateGod)
     res.status(202).json(updateGod)
   },
 
   delete: (req,res) => {
     const { id } = req.param
     const { apikey } = req.headers
-    let index = uniqueExp.apikey.find( e => e.id == id)
-    uniqueExp.apikey.splice(index,1)
-    res.status(200).send(uniqueExp.apikey)
+    let index = uniqueExp[apikey].find( e => e.id == id)
+    uniqueExp[apikey].splice(index,1)
+    res.status(200).send(uniqueExp[apikey])
   }
-
 
 }

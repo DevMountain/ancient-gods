@@ -7,10 +7,10 @@ module.exports = (req, res, next ) => {
     const {apikey} = req.headers
 
     if(!req.headers.apikey){
-      req.headers.apikey = false
-    }else if(apikey && !uniqueExp.apikey){
+      return res.status(500).send('please include a Unique API key')
+    }else if(apikey && !uniqueExp[apikey]){
       let newArray = deepclone(gods)
-      uniqueExp
+      uniqueExp[apikey] = newArray
     }
 
     next()
