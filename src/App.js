@@ -8,12 +8,12 @@ class App extends Component {
         active: '',
         apiKey: ''
       }
-    this.addUser = this.addUser.bind(this)
+    this.setApiKey = this.setApiKey.bind(this)
     this.handle = this.handle.bind(this)
     this.getGods = this.getGods.bind(this)
   }
 
-  addUser(){
+  setApiKey(){
     this.setState({
       active: this.state.apiKey
     })
@@ -35,11 +35,13 @@ class App extends Component {
       })
       .catch( e => console.log( 'error', e))
   }
+  
   render() {
+    console.log(this.state)
     return (
       <div className="App">
-        <input type="text" placeholder="unique key" onChange={e => this.handle('apikey', e.target.value)}/>
-        <input type="submit" value="add user" onClick={this.addUser}/>
+        <input type="text" placeholder="enter a Unique API key" onChange={e => this.handle('apiKey', e.target.value)}/>
+        <input type="submit" value="submit key" onClick={this.setApiKey}/>
           <div>
             <button onClick={this.getGods}>receive gods</button>
           </div>
