@@ -319,21 +319,15 @@ module.exports = {
 
   update: (req, res) => {
     const { id } = req.params
-    const { name, powers, mythology, demigod} = req.body
+    const { name, powers, mythology} = req.body
     const { apikey } = req.headers
-    let index = uniqueExp[apikey].find( e => e.id == id)
+    let index = uniqueExp[apikey].find( e => e.id == id) //rename
     let updateGod = {
       id: id,
       name: name || index.name,
       powers: powers || index.powers,
       mythology: mythology || index.mythology,
-      demigod: index.demigod
-    }
-
-    if(demigod == 'undefined'){
-      return;
-    }else if(demigod){
-      updateGod.demigod = demigod
+      demigod: ('demigod' in req.body) ? req.body.demigod : index.demigod
     }
 
     uniqueExp[apikey].splice(index,1,updateGod)
@@ -341,9 +335,11 @@ module.exports = {
   },
 
   delete: (req,res) => {
-    const { id } = req.param
+    const { id } = req.params
     const { apikey } = req.headers
-    let index = uniqueExp[apikey].find( e => e.id == id)
+    
+    let index = uniqueExp[apikey].findIndex( e => e.id == id)
+
     uniqueExp[apikey].splice(index,1)
     res.status(200).send(uniqueExp[apikey])
   }
