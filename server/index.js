@@ -7,6 +7,9 @@ const middleware = require('./middleware/apiKey_middleware')
 const app = express()
 app.use(bodyParser.json())
 
+app.use( express.static( `${__dirname}/../build` ) );
+
+
 app.use(middleware)
 
 
@@ -16,6 +19,10 @@ app.post('/api/gods', c.create)
 app.patch('/api/gods/:id', c.update)
 app.delete('/api/gods/:id', c.delete)
 
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 const PORT = 4000
 app.listen( PORT, () => {
