@@ -18,6 +18,7 @@ app.get('/api/gods/:id', c.getOne)
 app.post('/api/gods', c.create)
 app.patch('/api/gods/:id', c.update)
 app.delete('/api/gods/:id', c.delete)
+app.post('/api/gods/reset', c.reset)
 
 const path = require('path')
 app.get('*', (req, res)=>{

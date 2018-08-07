@@ -1,3 +1,6 @@
+const _ = require('lodash')
+const deepclone = require('lodash.clonedeep')
+
 let id = 36
 
 
@@ -341,6 +344,14 @@ module.exports = {
     let index = uniqueExp[apikey].findIndex( e => e.id == id)
 
     uniqueExp[apikey].splice(index,1)
+    res.status(200).send(uniqueExp[apikey])
+  },
+
+  reset: (req, res) => {
+    const { apikey } = req.headers
+    let newArray = deepclone(gods)
+    uniqueExp[apikey] = newArray
+    console.log(uniqueExp);
     res.status(200).send(uniqueExp[apikey])
   }
 
