@@ -8,8 +8,32 @@ import post_request2 from './assets/post_request2.png'
 import delete_request from './assets/delete.png'
 import patch_request2 from './assets/patch_request2.png'
 
+import axios from 'axios'
+
 class App extends Component {
 
+  componentDidMount(){
+    let config = {
+      headers: {
+        apikey: 'helloworld',
+      }
+    }
+		axios.get('http://localhost:3000/api/gods', config)
+			.then( e => {
+				console.log( 'gods array', e.data )
+			})
+			.catch( e => {
+				console.log( 'error', e)
+      })
+    axios.get('https://ancient-gods-api.now.sh/api/gods/24', config)
+      .then( e => {
+        console.log( 'first god', e)
+      })
+      .catch( e => {
+        console.log( 'error', e)
+      })
+  }
+  
   render() {
     return (
       <div>

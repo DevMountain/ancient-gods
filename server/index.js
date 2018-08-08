@@ -3,6 +3,13 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const c = require('./Controller/api_controller')
 const middleware = require('./middleware/apiKey_middleware')
+const cors = require('cors')
+
+const corsOptions = {
+  origin: '*'
+}
+
+app.use(cors(corsOptions))
 
 const app = express()
 app.use(bodyParser.json())
