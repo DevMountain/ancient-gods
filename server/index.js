@@ -9,9 +9,9 @@ const corsOptions = {
   origin: '*'
 }
 
-app.use(cors(corsOptions))
 
 const app = express()
+app.use(cors(corsOptions))
 app.use(bodyParser.json())
 
 app.use( express.static( `${__dirname}/../build` ) );

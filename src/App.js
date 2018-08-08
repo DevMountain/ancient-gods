@@ -18,14 +18,14 @@ class App extends Component {
         apikey: 'helloworld',
       }
     }
-		axios.get('http://localhost:3000/api/gods', config)
+		axios.get('https://ancient-gods-api.now.sh/api/gods', config)
 			.then( e => {
 				console.log( 'gods array', e.data )
 			})
 			.catch( e => {
 				console.log( 'error', e)
       })
-    axios.get('https://ancient-gods-api.now.sh/api/gods/24', config)
+    axios.get('https://ancient-gods-api.now.sh/api/gods/2', config)
       .then( e => {
         console.log( 'first god', e)
       })
