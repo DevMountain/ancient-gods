@@ -351,7 +351,6 @@ module.exports = {
     const { apikey } = req.headers
     let newArray = deepclone(gods)
     uniqueExp[apikey] = newArray
-    console.log(uniqueExp);
     res.status(200).send(uniqueExp[apikey])
   }
 
