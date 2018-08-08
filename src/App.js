@@ -28,7 +28,7 @@ class App extends Component {
             <br/>
             <li><strong>GET</strong> request
               <br/>
-                - Part 1: Select <strong>'Get'</strong> and type the <strong>FULL</strong> endpoint ( ie: http://localhost:4000/api/gods )
+                - Part 1: Select <strong>'Get'</strong> and type the <strong>FULL</strong> endpoint ( ie: https://ancient-gods-api.now.sh/api/gods )
               <br/>
                 - Part 2: Select <strong>'Headers'</strong> and add 'apikey' to the key field, followed by a unique word/phrase in the value field
               <br/>
@@ -41,7 +41,7 @@ class App extends Component {
             <br/>
             <li><strong>GET ONE</strong> request
               <br/>
-                - Part 1: Select <strong>'Get'</strong> and type the <strong>FULL</strong> endpoint ( ie: http://localhost:4000/api/gods/:id ..where :id is a placeholder)
+                - Part 1: Select <strong>'Get'</strong> and type the <strong>FULL</strong> endpoint ( ie: https://ancient-gods-api.now.sh/api/gods/:id ..where :id is a placeholder)
               <br/>
                 - Part 2: Select <strong>'Headers'</strong> and add 'apikey' to the key field, followed by a unique word/phrase in the value field
               <br/>
@@ -54,7 +54,7 @@ class App extends Component {
             <br/>
             <li><strong>PATCH</strong> request
               <br/>
-                - Part 1: Select <strong>'PATCH'</strong> and type the <strong>FULL</strong> endpoint ( ie: http://localhost:4000/api/gods/:id ..where :id is a placeholder)
+                - Part 1: Select <strong>'PATCH'</strong> and type the <strong>FULL</strong> endpoint ( ie: https://ancient-gods-api.now.sh/api/gods/:id ..where :id is a placeholder)
               <br/>
                 - Part 2: Select <strong>'Headers'</strong> and add 'apikey' to the key field, followed by a unique word/phrase in the value field
               <br/>
@@ -71,7 +71,7 @@ class App extends Component {
             <br/>
             <li><strong>POST</strong> request
               <br/>
-                - Part 1: Select <strong>'POST'</strong> and type the <strong>FULL</strong> endpoint ( ie: http://localhost:4000/api/gods )
+                - Part 1: Select <strong>'POST'</strong> and type the <strong>FULL</strong> endpoint ( ie: https://ancient-gods-api.now.sh/api/gods )
               <br/>
                 - Part 2: Select <strong>'Headers'</strong> and add 'apikey' to the key field, followed by a unique word/phrase in the value field
               <br/>
@@ -88,7 +88,7 @@ class App extends Component {
             <br/>
             <li><strong>DELETE</strong> request
               <br/>
-                - Part 1: Select <strong>'DELETE'</strong> and type the <strong>FULL</strong> endpoint ( ie: http://localhost:4000/api/gods/:id ..where :id is a placeholder)
+                - Part 1: Select <strong>'DELETE'</strong> and type the <strong>FULL</strong> endpoint ( ie: https://ancient-gods-api.now.sh/api/gods/:id ..where :id is a placeholder)
               <br/>
                 - Part 2: Select <strong>'Headers'</strong> and add 'apikey' to the key field, followed by a unique word/phrase in the value field
               <br/>
