@@ -299,10 +299,10 @@ module.exports = {
   },
 
   getOne: (req,res) => {
-    const { id } = req.params
+    const id = req.params.id
     const {apikey} = req.headers
-
-    res.status(200).send(uniqueExp[apikey].id) 
+    const num = uniqueExp[apikey].find( e => e.id == +id)
+    res.status(200).send(num) 
   },
 
   create: (req, res) => {
@@ -324,13 +324,13 @@ module.exports = {
     const { id } = req.params
     const { name, powers, mythology} = req.body
     const { apikey } = req.headers
-    let index = uniqueExp[apikey].find( e => e.id == id) //rename
+    let god = uniqueExp[apikey].find( e => e.id == id)
     let updateGod = {
       id: id,
-      name: name || index.name,
-      powers: powers || index.powers,
-      mythology: mythology || index.mythology,
-      demigod: ('demigod' in req.body) ? req.body.demigod : index.demigod
+      name: name || god.name,
+      powers: powers || god.powers,
+      mythology: mythology || god.mythology,
+      demigod: ('demigod' in req.body) ? req.body.demigod : god.demigod
     }
 
     uniqueExp[apikey].splice(index,1,updateGod)
