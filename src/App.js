@@ -25,7 +25,7 @@ class App extends Component {
 			.catch( e => {
 				console.log( 'error', e)
       })
-    axios.get('https://ancient-gods-api.now.sh/api/gods/2', config)
+    axios.get('https://ancient-gods-api.now.sh/api/gods/1', config)
       .then( e => {
         console.log( 'first god', e)
       })
