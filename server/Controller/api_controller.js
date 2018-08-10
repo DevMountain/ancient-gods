@@ -333,7 +333,7 @@ module.exports = {
       demigod: ('demigod' in req.body) ? req.body.demigod : god.demigod
     }
 
-    uniqueExp[apikey].splice(index,1,updateGod)
+    uniqueExp[apikey].splice(god,1,updateGod)
     res.status(202).json(updateGod)
   },
 
