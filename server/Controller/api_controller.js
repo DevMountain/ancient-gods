@@ -186,7 +186,7 @@ const gods = [
     name: "Jupiter",
     powers: ["Light and Sky", "Thunder", "Lightning"],
     mythology: "Roman",
-    image:'',
+    image:'https://i.ytimg.com/vi/_CFshla56ac/maxresdefault.jpg',
     demigod: false
   },
   {
@@ -194,7 +194,7 @@ const gods = [
     name: "Juno",
     powers: ["Leadership", "Queen of The Gods"],
     mythology: "Roman",
-    image:'https://i.ytimg.com/vi/_CFshla56ac/maxresdefault.jpg',
+    image:'https://upload.wikimedia.org/wikipedia/commons/2/2f/Hera_Farnese_MAN_Napoli_Inv6027.jpg',
     demigod: false
   },
   {
