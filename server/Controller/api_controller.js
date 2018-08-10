@@ -26,7 +26,7 @@ const gods = [
     name: "Achilles",
     powers: ["Invincibility", "War"],
     mythology: "Greek",
-    image:'http://www.reusableart.com/miwp/wp-content/uploads/2014/03/greek-gods-02.jpg',
+    image:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Closeup_of_Achilles_thniskon_in_Corfu_Achilleion_autocorrected.JPG/1280px-Closeup_of_Achilles_thniskon_in_Corfu_Achilleion_autocorrected.JPG',
     demigod: true
   },
   {
