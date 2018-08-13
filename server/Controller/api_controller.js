@@ -306,13 +306,14 @@ module.exports = {
   },
 
   create: (req, res) => {
-    const {name, powers, mythology, demigod} = req.body
+    const {name, powers, mythology, demigod, image} = req.body
     const { apikey } = req.headers
     let newGod = {
       id: id++,
       name: name,
       powers: powers,
       mythology: mythology,
+      image: image,
       demigod: demigod
     }
 
@@ -330,7 +331,7 @@ module.exports = {
       name: name || god.name,
       powers: powers || god.powers,
       mythology: mythology || god.mythology,
-      image: god.image,
+      image: god.image || god.image,
       demigod: ('demigod' in req.body) ? req.body.demigod : god.demigod
     }
 
