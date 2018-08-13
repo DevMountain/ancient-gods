@@ -323,19 +323,21 @@ module.exports = {
 
   patch: (req, res) => {
     const { id } = req.params
-    const { name, powers, mythology} = req.body
+    const { name, powers, mythology, image} = req.body
     const { apikey } = req.headers
-    let god = uniqueExp[apikey].find( e => e.id == id)
+    let godIndex = uniqueExp[apikey].findIndex( e => e.id == +id)
+    let god = uniqueExp[apikey].find(e => e.id == +id)
+    console.log(god);
     let updateGod = {
-      id: id,
+      id: +id,
       name: name || god.name,
       powers: powers || god.powers,
       mythology: mythology || god.mythology,
-      image: god.image || god.image,
+      image: image || god.image,
       demigod: ('demigod' in req.body) ? req.body.demigod : god.demigod
     }
 
-    uniqueExp[apikey].splice(god,1,updateGod)
+    uniqueExp[apikey].splice(godIndex,1,updateGod)
     res.status(202).json(updateGod)
   },
   
@@ -345,7 +347,7 @@ module.exports = {
     const { apikey } = req.headers
     let god = uniqueExp[apikey].find( e => e.id == id)
     let updateGod = {
-      id: id,
+      id: +id,
       name: name,
       powers: powers,
       mythology: mythology,
