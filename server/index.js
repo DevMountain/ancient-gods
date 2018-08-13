@@ -24,7 +24,7 @@ app.get(`${apiPath}`, c.get)
 app.get(`${apiPath}/:id`, c.getOne)
 app.put(`${apiPath}/:id`, c.put)
 app.patch(`${apiPath}/:id`, c.patch)
-app.post(`${apiPath}/:id`, c.create)
+app.post(`${apiPath}`, c.create)
 app.delete(`${apiPath}/:id`, c.delete)
 app.post(`${apiPath}/reset`, c.reset)
 
