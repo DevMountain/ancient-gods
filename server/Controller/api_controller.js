@@ -311,7 +311,7 @@ module.exports = {
     let newGod = {
       id: id++,
       name: name,
-      powers: powers,
+      powers: [powers],
       mythology: mythology,
       image: image,
       demigod: demigod
