@@ -328,6 +328,7 @@ module.exports = {
     let godIndex = uniqueExp[apikey].findIndex( e => e.id == +id)
     let god = uniqueExp[apikey].find(e => e.id == +id)
     console.log(god);
+    // id coming in as string add '+' to change to integer
     let updateGod = {
       id: +id,
       name: name || god.name,
