@@ -19,14 +19,14 @@ app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(middleware)
 
-
-app.get(`${process.env.API_PATH}/`, c.get)
-app.get(`${process.env.API_PATH}/:id`, c.getOne)
-app.put(`${process.env.API_PATH}/:id`, c.put)
-app.patch(`${process.env.API_PATH}/:id`, c.patch)
-app.post(`${process.env.API_PATH}/:id`, c.create)
-app.delete(`${process.env.API_PATH}/:id`, c.delete)
-app.post(`${process.env.API_PATH}/reset`, c.reset)
+const apiPath = process.env.API_PATH || '/api/gods'
+app.get(`${apiPath}`, c.get)
+app.get(`${apiPath}/:id`, c.getOne)
+app.put(`${apiPath}/:id`, c.put)
+app.patch(`${apiPath}/:id`, c.patch)
+app.post(`${apiPath}/:id`, c.create)
+app.delete(`${apiPath}/:id`, c.delete)
+app.post(`${apiPath}/reset`, c.reset)
 
 const path = require('path')
 app.get('*', (req, res)=>{
