@@ -18,9 +18,11 @@ app.use(bodyParser.json())
 app.use( express.static( `${__dirname}/../build` ) );
 
 
+const apiPath = 'API_PATH' in process.env ? process.env.API_PATH : '/api/gods'
+app.get(path.join(apiPath, 'all'), c.getAll)
+
 app.use(middleware)
 
-const apiPath = 'API_PATH' in process.env ? process.env.API_PATH : '/api/gods'
 const apiPathWithId = path.join(apiPath, ':id')
 app.get(apiPath, c.get)
 app.get(apiPathWithId, c.getOne)

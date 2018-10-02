@@ -294,8 +294,11 @@ module.exports = {
   gods,uniqueExp,
   get: (req,res) => {
     const {apikey} = req.headers
-
+    
     res.status(200).send(uniqueExp[apikey])
+  },
+  getAll: (req, res) => {
+    res.status(200).send(gods);
   },
 
   getOne: (req,res) => {
